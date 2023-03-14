@@ -1,10 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=ards_tune_fio_mae
-#SBATCH --account=ai4hc
-#SBATCH --output=script_outputs/ards_tune_fio_mae.out
-#SBATCH --error=script_outputs/ards_tune_fio_mae.err
+#SBATCH --output=ards_tune_fio_mae.out
+#SBATCH --error=ards_tune_fio_mae.err
 
-#SBATCH --partition=dp-esb
 #SBATCH --nodes=16
 #SBATCH --cpus-per-task=16
 #SBATCH --gpus-per-node=1
@@ -16,7 +14,6 @@
 module --force purge
 module use $OTHERSTAGES
 module load Stages/Devel-2020
-module load Intel
 module load GCCcore/.9.3.0
 module load GCC/9.3.0
 module load Python/3.8.5
@@ -25,11 +22,8 @@ module load ParaStationMPI
 module load CUDA/11.0
 module load cuDNN/8.0.2.39-CUDA-11.0
 
-export LD_LIBRARY_PATH=/p/home/jusers/barakat1/deep:$LD_LIBRARY_PATH
 
-source /p/project/ai4hc/barakat1/jupyter/kernels/gpu_kernel/bin/activate
-
-export PYTHONPATH=/p/project/ai4hc/barakat1/jupyter/kernels/gpu_kernel/lib/python3.8/site-packages:${PYTHONPATH}
+source jupyter/kernels/gpu_kernel/bin/activate
 
 sleep 1
 
@@ -93,6 +87,3 @@ echo "Ready"
 # python3 -u  ray_tune_experiment.py --num_samples 64 --max_num_epochs 40 --gpus_per_trial 1 --cpus_per_trial 16 --scheduler hpb
 # python3 -u  ray_tune_experiment.py --num_samples 64 --max_num_epochs 40 --gpus_per_trial 1 --cpus_per_trial 16 --scheduler pbt
 python3 -u  ray_tune_experiment.py --num_samples 64 --max_num_epochs 40 --gpus_per_trial 1 --cpus_per_trial 16
-
-# trials with wandb
-# python3 -u  ray_tune_experiment.py --num_samples 2 --max_num_epochs 2 --gpus_per_trial 1 --cpus_per_trial 2 --scheduler pbt
