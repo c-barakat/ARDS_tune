@@ -29,5 +29,4 @@ Please note that some of the code is streamlined for parallel execution and will
 * The [saved_model](saved_model/) directory contains the models trained on the best parameters selected by each of the 4 schedulers.
 * [training_results](training_results/) contains the training performance of the ANN and CNN models described in the paper as well as the 4 models contained in the [saved_model](saved_model/) directory. The contents of this directory are generated from [train_and_test_NN.ipynb](train_and_test_NN.ipynb).
 * [figures](figures/) is the directory where figures from [visualize_results_plotly.ipynb](visualize_results_plotly.ipynb) are expected to be saved.
-* [training_results](training_results/) contains the training performance for each of the models as well as the final models and their R$^2$ scores.
 * Further directories can or will need to be created when [Ray Tune is initialised](ray_tune_experiment.py).
