@@ -14,7 +14,7 @@ Please note that some of the code is streamlined for parallel execution and will
 
 ## Required for serial execution
 * Python==3.8.5
-* tensorboard==2.4.0
+* tensorflow==2.4.0
 * matplotlib==3.4.1
 * plotly==4.14.3
 * numpy==1.19.2
