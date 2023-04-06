@@ -4,7 +4,7 @@ This repository includes the code and data required to replicate the results of 
 Please note that some of the code is streamlined for parallel execution and will need to be adapted for serial implementation.
 
 # Dataset
-* The generated patient data is available for download from the [FZ-Juelich B2Share website](https://b2share.fz-juelich.de/records/aef5d3b8aa044485b9620b95b60c47a2).
+* The generated patient data is available for download from the [FZ-Juelich B2Share website](https://doi.org/10.23728/b2share.b143c287bb69482a90ababe7a5a8eb4a).
 
 # Software, Packages, and versions
 ## Required for parallel execution
